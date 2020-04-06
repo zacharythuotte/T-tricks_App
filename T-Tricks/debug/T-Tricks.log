@@ -1,2 +1,8 @@
-﻿  mainwindow.cpp
+﻿  MOC optionwindow.h
+  moc_mainwindow.cpp
+  moc_optionwindow.cpp
+  main.cpp
+  mainwindow.cpp
+  optionwindow.cpp
+  Génération de code en cours...
   T-Tricks.vcxproj -> C:\Users\Steve Pharand\Desktop\T-Tricks\debug\T-Tricks.exe
