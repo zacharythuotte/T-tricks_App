@@ -18,7 +18,9 @@ public slots:
 
 
 private:
-	
+	QWidget *gameWidget;
+	QGridLayout *gameLayout;
+
 
 };
 #endif // MAINWINDOW_H
