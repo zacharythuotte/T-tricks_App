@@ -5,4 +5,4 @@ HEADERS     += mainwindow.h gamewindow.h optionwindow.h
 SOURCES     += mainwindow.cpp main.cpp gamewindow.cpp optionwindow.cpp
 INCLUDEPATH += .
 LIBS	      += 
-QT += widgets
+QT += widgets multimedia

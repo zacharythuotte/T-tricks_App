@@ -5,7 +5,7 @@
 #include <qlayout.h>
 #include <qpushbutton.h>
 #include <qlabel.h>
-
+#include <QSound.h>
 
 class OptionWindow : public QMainWindow
 {
@@ -20,7 +20,7 @@ public slots:
 private:
 	QWidget *optionWidget;
 	QGridLayout *layoutOption;
-
+	QPushButton *acceptButton;
 
 };
 #endif // MAINWINDOW_H

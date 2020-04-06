@@ -5,8 +5,10 @@
 #include <qlayout.h>
 #include <qpushbutton.h>
 #include <qlabel.h>
+#include <QSound.h>
 
 #include "optionwindow.h"
+#include "gamewindow.h"
 
 
 class MainWindow : public QMainWindow
@@ -18,18 +20,22 @@ public:
     ~MainWindow();
 public slots:
 	void showOption();
+	void showGame();
 
 private:
 	QWidget *centralWidget;
-	QGridLayout *layoutPrincipal;
+	QVBoxLayout *layoutPrincipal;
+	QSound *musique;
 	QPushButton *startButton;
 	QPushButton *optionButton;
+	QPushButton *volumeButton;
 	QPushButton *exitButton;
 	QAction *startAct;
 	QAction *optionAct;
 	QAction *exitAct;
 	QLabel *screenTitle;
 	OptionWindow *optionPage;
+	GameWindow *gamePage;
 	
 
 };
