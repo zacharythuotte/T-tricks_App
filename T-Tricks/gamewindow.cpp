@@ -15,8 +15,17 @@ GameWindow::GameWindow(QWidget *parent)
 	palette.setBrush(QPalette::Background, bkgnd);
 	this->setPalette(palette);
 
-	//BOUTON DE OPTION
-	
+	//LCD SCORE ET LIGNES
+	scoreLCD = new QLCDNumber(5);
+	scoreLCD->setSegmentStyle(QLCDNumber::Filled);
+
+
+	//BOUTON DE GAME
+	quitButton = new QPushButton("Quitter");
+	QObject::connect(quitButton, SIGNAL(clicked()), this, SLOT(close()));
+
+	pauseButton = new QPushButton("Pause");
+	//QObject::connect(pauseButton,SIGNAL(clicked(), this, ));
 
 	//PLACEMENT LAYOUT PRINCIPAL
 

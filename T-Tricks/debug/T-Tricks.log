@@ -1,13 +1,87 @@
-﻿  Generate moc_predefs.h
-  MOC gamewindow.h
-  MOC mainwindow.h
-  MOC optionwindow.h
-  gamewindow.cpp
-  main.cpp
-  mainwindow.cpp
-  optionwindow.cpp
-  moc_gamewindow.cpp
-  moc_mainwindow.cpp
-  moc_optionwindow.cpp
+﻿  gameboard.cpp
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(23): error C2061: erreur de syntaxe : identificateur 'GameForme'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(28): error C2061: erreur de syntaxe : identificateur 'GameForme'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(30): error C2061: erreur de syntaxe : identificateur 'GameForme'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(31): error C2061: erreur de syntaxe : identificateur 'GameForme'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(31): error C2535: 'void GameBoard::tournerForme(void)' : fonction membre déjà définie ou déclarée
+  c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(30): note: voir la déclaration de 'GameBoard::tournerForme'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(32): error C2061: erreur de syntaxe : identificateur 'GameForme'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(45): error C2143: erreur de syntaxe : absence de ';' avant '*'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(45): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(45): error C2238: jetons inattendus avant ';'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(46): error C2143: erreur de syntaxe : absence de ';' avant '*'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(46): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(46): error C2238: jetons inattendus avant ';'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(47): error C2143: erreur de syntaxe : absence de ';' avant '*'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(47): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(47): error C2238: jetons inattendus avant ';'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(48): error C3646: 'level' : spécificateur de substitution inconnu
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(48): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(18): error C2065: 'curForme' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(19): error C2065: 'prochaineForme' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(20): error C2065: 'curForme' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(21): error C2065: 'curForme' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(29): error C2065: 'curForme' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(29): error C2541: 'delete' : impossible de détruire des objets qui ne sont pas des pointeurs
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(46): error C2079: 'painter' utilise une class de 'QPainter' non défini
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(46): error C2440: 'initialisation' : impossible de convertir de 'GameBoard *' en 'int'
+  c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(46): note: Aucun contexte dans lequel cette conversion est possible
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(54): error C2065: 'preview' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(54): error C2065: 'curForme' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(55): error C2065: 'preview' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(56): error C2065: 'preview' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(62): error C2065: 'curForme' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(66): error C2065: 'preview' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(79): error C2065: 'prochaineForme' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(90): error C2065: 'level' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(93): error C2065: 'preview' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(93): error C2541: 'delete' : impossible de détruire des objets qui ne sont pas des pointeurs
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(97): error C2511: 'bool GameBoard::collision(GameForme *)' : impossible de trouver la fonction membre surchargée dans 'GameBoard'
+  c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(11): note: voir la déclaration de 'GameBoard'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(108): error C2597: référence non conforme à un membre non static 'GameBoard::board'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(108): error C3867: 'GameBoard::board' : syntaxe non-standard ; utilisez '&' pour créer un pointeur vers un membre
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(108): error C2109: un indice requiert un type tableau ou pointeur
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(140): error C2065: 'level' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(156): error C2065: 'curForme' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(171): error C2065: 'curForme' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(175): error C2065: 'curForme' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(179): error C2065: 'curForme' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(183): error C2065: 'curForme' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(190): error C2511: 'void GameBoard::bougerForme(GameForme *,int,int)' : impossible de trouver la fonction membre surchargée dans 'GameBoard'
+  c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(11): note: voir la déclaration de 'GameBoard'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(199): error C2660: 'GameBoard::collision' : la fonction ne prend pas 1 arguments
+  c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(23): note: voir la déclaration de 'GameBoard::collision'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(211): error C2660: 'GameBoard::collision' : la fonction ne prend pas 1 arguments
+  c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(23): note: voir la déclaration de 'GameBoard::collision'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(221): error C2660: 'GameBoard::collision' : la fonction ne prend pas 1 arguments
+  c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(23): note: voir la déclaration de 'GameBoard::collision'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(226): error C2660: 'GameBoard::formeVersBoard' : la fonction ne prend pas 1 arguments
+  c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(32): note: voir la déclaration de 'GameBoard::formeVersBoard'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(227): error C2352: 'GameBoard::changerForme' : appel non conforme d'une fonction membre non static
+  c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(29): note: voir la déclaration de 'GameBoard::changerForme'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(238): error C2065: 'curForme' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(238): error C2541: 'delete' : impossible de détruire des objets qui ne sont pas des pointeurs
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(239): error C2065: 'curForme' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(239): error C2065: 'prochaineForme' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(241): error C2065: 'curForme' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(243): warning C4553: '==' : résultat de l'expression non utilisé ; souhaitiez-vous utiliser '=' ?
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(245): error C2065: 'prochaineForme' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(249): error C2511: 'void GameBoard::tournerForme(GameForme *)' : impossible de trouver la fonction membre surchargée dans 'GameBoard'
+  c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(11): note: voir la déclaration de 'GameBoard'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(250): error C2660: 'GameBoard::tournerForme' : la fonction ne prend pas 2 arguments
+  c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(30): note: voir la déclaration de 'GameBoard::tournerForme'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(254): error C2511: 'void GameBoard::tournerForme(GameForme *,int)' : impossible de trouver la fonction membre surchargée dans 'GameBoard'
+  c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(11): note: voir la déclaration de 'GameBoard'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(256): error C2660: 'GameBoard::collision' : la fonction ne prend pas 1 arguments
+  c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(23): note: voir la déclaration de 'GameBoard::collision'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(263): error C2511: 'void GameBoard::formeVersBoard(GameForme *)' : impossible de trouver la fonction membre surchargée dans 'GameBoard'
+  c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.h(11): note: voir la déclaration de 'GameBoard'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(273): error C2597: référence non conforme à un membre non static 'GameBoard::board'
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(273): error C3867: 'GameBoard::board' : syntaxe non-standard ; utilisez '&' pour créer un pointeur vers un membre
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(273): error C2109: un indice requiert un type tableau ou pointeur
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(285): error C2065: 'level' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(286): error C2065: 'level' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(288): error C2065: 'curForme' : identificateur non déclaré
+c:\users\steve pharand\desktop\t-tricks_app\t-tricks\gameboard.cpp(293): error C2065: 'level' : identificateur non déclaré
+  gameforme.cpp
   Génération de code en cours...
-  T-Tricks.vcxproj -> C:\Users\Steve Pharand\Desktop\T-tricks_App\T-Tricks\debug\T-Tricks.exe
