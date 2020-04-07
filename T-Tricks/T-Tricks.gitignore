@@ -1,0 +1,10 @@
+ipch/
+*.ipch
+
+T-Tricks/.vs/T-Tricks/v15/
+
+.vs/
+x64/
+*.log
+
+/Debug/

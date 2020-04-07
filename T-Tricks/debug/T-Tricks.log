@@ -1,4 +1,13 @@
-﻿  gamewindow.cpp
+﻿  Generate moc_predefs.h
+  MOC gamewindow.h
+  MOC mainwindow.h
+  MOC optionwindow.h
+  gamewindow.cpp
+  main.cpp
   mainwindow.cpp
+  optionwindow.cpp
+  moc_gamewindow.cpp
+  moc_mainwindow.cpp
+  moc_optionwindow.cpp
   Génération de code en cours...
-  T-Tricks.vcxproj -> C:\Users\Steve Pharand\Desktop\T-Tricks\debug\T-Tricks.exe
+  T-Tricks.vcxproj -> C:\Users\Steve Pharand\Desktop\T-tricks_App\T-Tricks\debug\T-Tricks.exe
