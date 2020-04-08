@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
 	centralWidget = new QWidget();
 	
@@ -12,6 +11,21 @@ MainWindow::MainWindow(QWidget *parent)
 
 	//LAYOUT
 	layoutPrincipal = new QVBoxLayout();
+
+	//BARRE OUTILS (VOLUME)
+	sliderVolume = new QSlider(Qt::Horizontal);
+	//sliderVolume->setRange(0, 1);
+
+	toolBar = new QToolBar("Volume");
+	this->setContextMenuPolicy(Qt::NoContextMenu); //Empeche denlever la toolbar
+	//toolBar->addWidget()
+	toolBar->addWidget(new QLabel("Volume"));
+	toolBar->addSeparator();
+	toolBar->addWidget(sliderVolume);
+	toolBar->setMaximumWidth(300);
+	//toolBar->setStyle(QStyle::) //Rendre plus visible...
+
+	this->addToolBar(Qt::BottomToolBarArea, toolBar);
 
 	//BACKGROUND DE LINTERFACE
 	QPixmap bkgnd("./Image/Background.jpg");
@@ -25,10 +39,10 @@ MainWindow::MainWindow(QWidget *parent)
 	screenTitle->setPixmap(QPixmap("./Image/Screentitle.png"));
 
 	//BOUTON MENU PRINCIPAL
-	startButton = new QPushButton("Commencer!");
+	startButton = new QPushButton("Jouer!");
 	QObject::connect(startButton, SIGNAL(clicked()), this, SLOT(showGame()));
 
-	optionButton = new QPushButton("Option");
+	optionButton = new QPushButton("Options");
 	QObject::connect(optionButton, SIGNAL(clicked()), this, SLOT(showOption()));
 
 	volumeButton = new QPushButton("Musique");
@@ -59,10 +73,9 @@ MainWindow::~MainWindow()
 	delete screenTitle;
 	delete layoutPrincipal;
 	delete centralWidget;
-	
 }
 
-//CETTE FONCTION MONTRE LA FENETRE DOPTION
+//CETTE FONCTION MONTRE LA FENETRE D OPTIONS
 void MainWindow::showOption()
 {
 	optionPage = new OptionWindow();

@@ -6,6 +6,7 @@
 #include <qpushbutton.h>
 #include <qlabel.h>
 #include <QSound.h>
+#include <qtoolbar.h>
 
 #include "optionwindow.h"
 #include "gamewindow.h"
@@ -36,7 +37,7 @@ private:
 	QLabel *screenTitle;
 	OptionWindow *optionPage;
 	GameWindow *gamePage;
-	
-
+	QToolBar *toolBar;
+	QSlider *sliderVolume;
 };
 #endif // MAINWINDOW_H

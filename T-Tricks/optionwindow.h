@@ -3,9 +3,11 @@
 
 #include <QMainWindow>
 #include <qlayout.h>
-#include <qpushbutton.h>
-#include <qlabel.h>
+#include <Qpushbutton.h>
+#include <Qlabel.h>
 #include <QSound.h>
+#include <QSlider>
+//#include <Qdebug.h>
 
 class OptionWindow : public QMainWindow
 {
@@ -15,12 +17,15 @@ public:
 	OptionWindow(QWidget *parent = nullptr);
 	~OptionWindow();
 public slots:
-	
+	void changeSpeed();
 
 private:
 	QWidget *optionWidget;
 	QGridLayout *layoutOption;
+	QGridLayout *layoutSlider;
 	QPushButton *acceptButton;
-
+	QSlider *sliderSpeed;
+	QLabel *labelSliderTitle;
+	QLabel *labelSliderSpeed;
 };
 #endif // MAINWINDOW_H
