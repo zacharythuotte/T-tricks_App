@@ -5,15 +5,19 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 	centralWidget = new QWidget();
 	
 	//MUSIQUE
-	musique = new QSound("./Image/TetrisMetal.wav");
+	musique = new QSoundEffect();
+	musique->setSource(QUrl::fromLocalFile("./Image/TetrisMetal.wav"));
 	musique->play();
-	musique->setLoops(-1);
+	musique->setLoopCount(QSoundEffect::Infinite);
+	musique->setVolume(0.5);
 
 	//LAYOUT
 	layoutPrincipal = new QVBoxLayout();
 
 	//BARRE OUTILS (VOLUME)
 	sliderVolume = new QSlider(Qt::Horizontal);
+	sliderVolume->setValue(50);
+	QObject::connect(sliderVolume, SIGNAL(valueChanged(int)), this, SLOT(changeVolume()));
 	//sliderVolume->setRange(0, 1);
 
 	toolBar = new QToolBar("Volume");
@@ -23,6 +27,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 	toolBar->addSeparator();
 	toolBar->addWidget(sliderVolume);
 	toolBar->setMaximumWidth(300);
+	toolBar->setMovable(false);
 	//toolBar->setStyle(QStyle::) //Rendre plus visible...
 
 	this->addToolBar(Qt::BottomToolBarArea, toolBar);
@@ -67,6 +72,9 @@ MainWindow::~MainWindow()
 	delete startButton;
 	delete optionButton;
 	delete volumeButton;
+	delete sliderVolume;
+	delete toolBar;
+
 	delete exitButton;
 	delete musique;
 
@@ -79,14 +87,20 @@ MainWindow::~MainWindow()
 void MainWindow::showOption()
 {
 	optionPage = new OptionWindow();
-	optionPage->show();
+	setCentralWidget(optionPage);
+	//optionPage->show();
 }
 
 //CETTE FONCTION MONTRE LA FENETRE DE JEU
 void MainWindow::showGame()
 {
 	gamePage = new GameWindow;
-	gamePage->show();
+	setCentralWidget(gamePage);
+	//gamePage->show();
 }
 
+void MainWindow::changeVolume()
+{
+	musique->setVolume((sliderVolume->value())/100.0);
+}
 

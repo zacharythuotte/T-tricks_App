@@ -5,7 +5,7 @@
 #include <qlayout.h>
 #include <qpushbutton.h>
 #include <qlabel.h>
-#include <QSound.h>
+#include <QSoundEffect.h>
 #include <qtoolbar.h>
 
 #include "optionwindow.h"
@@ -22,11 +22,12 @@ public:
 public slots:
 	void showOption();
 	void showGame();
+	void changeVolume();
 
 private:
 	QWidget *centralWidget;
 	QVBoxLayout *layoutPrincipal;
-	QSound *musique;
+	QSoundEffect *musique;
 	QPushButton *startButton;
 	QPushButton *optionButton;
 	QPushButton *volumeButton;
