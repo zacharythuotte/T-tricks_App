@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
 	//BARRE OUTILS (VOLUME)
 	sliderVolume = new QSlider(Qt::Horizontal);
-	sliderVolume->setValue(50);
+	sliderVolume->setValue(50); //Mettre la valeur en memoire//////////////////////////////////////////
 	QObject::connect(sliderVolume, SIGNAL(valueChanged(int)), this, SLOT(changeVolume()));
 	//sliderVolume->setRange(0, 1);
 
@@ -50,8 +50,10 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 	optionButton = new QPushButton("Options");
 	QObject::connect(optionButton, SIGNAL(clicked()), this, SLOT(showOption()));
 
-	volumeButton = new QPushButton("Musique");
-	QObject::connect(volumeButton, SIGNAL(clicked()), musique, SLOT(stop()));
+	//Modifiee pour tests/////////////////////////////////////////
+	volumeButton = new QPushButton("Test gameover");
+	QObject::connect(volumeButton, SIGNAL(clicked()), this, SLOT(showGameOver()));
+	//QObject::connect(volumeButton, SIGNAL(clicked()), musique, SLOT(stop()));
 
 	exitButton = new QPushButton("Quitter");
 	QObject::connect(exitButton, SIGNAL(clicked()), this, SLOT(close()));
@@ -94,8 +96,16 @@ void MainWindow::showOption()
 //CETTE FONCTION MONTRE LA FENETRE DE JEU
 void MainWindow::showGame()
 {
-	gamePage = new GameWindow;
+	gamePage = new GameWindow();
 	setCentralWidget(gamePage);
+	//gamePage->show();
+}
+
+//CETTE FONCTION MONTRE LA FENETRE DE FIN DE JEU
+void MainWindow::showGameOver()
+{
+	gameOverPage = new GameOverWindow(centralWidget);
+	setCentralWidget(gameOverPage);
 	//gamePage->show();
 }
 

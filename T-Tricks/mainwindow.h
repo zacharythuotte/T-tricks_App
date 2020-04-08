@@ -10,6 +10,7 @@
 
 #include "optionwindow.h"
 #include "gamewindow.h"
+#include "gameoverwindow.h"
 
 
 class MainWindow : public QMainWindow
@@ -22,6 +23,8 @@ public:
 public slots:
 	void showOption();
 	void showGame();
+	void showGameOver();
+
 	void changeVolume();
 
 private:
@@ -38,6 +41,7 @@ private:
 	QLabel *screenTitle;
 	OptionWindow *optionPage;
 	GameWindow *gamePage;
+	GameOverWindow *gameOverPage;
 	QToolBar *toolBar;
 	QSlider *sliderVolume;
 };

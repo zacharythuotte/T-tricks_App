@@ -1,8 +1,8 @@
 TEMPLATE     = vcapp
 TARGET       = T-Tricks
 CONFIG      += warn_on qt debug_and_release windows console
-HEADERS     += mainwindow.h gamewindow.h optionwindow.h
-SOURCES     += mainwindow.cpp main.cpp gamewindow.cpp optionwindow.cpp
+HEADERS     += mainwindow.h gamewindow.h gameoverwindow.h optionwindow.h leaderboardwindow.h
+SOURCES     += mainwindow.cpp main.cpp gamewindow.cpp gameoverwindow.cpp optionwindow.cpp leaderboardwindow.cpp
 INCLUDEPATH += .
 LIBS	      += 
 QT += widgets multimedia
