@@ -16,23 +16,29 @@ OptionWindow::OptionWindow(QWidget *parent) : QMainWindow(parent)
 
 	//BOUTON DE OPTION
 	acceptButton = new QPushButton("Accepter");
-	QObject::connect(acceptButton, SIGNAL(clicked()), this, SLOT(close()));
+	QObject::connect(acceptButton, SIGNAL(clicked()), parent, SLOT(showMainWindow()));
 
 	//SLIDER CHOIX VITESSE
 	layoutSlider = new QGridLayout();
 
-	labelSliderTitle = new QLabel("Vitesse de départ");
+	labelSliderTitle = new QLabel("Vitesse de jeu");
 	labelSliderTitle->setFrameStyle(QFrame::StyledPanel);
 	labelSliderTitle->setStyleSheet("background-color: yellow");
-	labelSliderTitle->setMaximumSize(300, 50); //////////////////////////////////
+	labelSliderTitle->setMaximumSize(300, 100); //////////////////////////////////
 	//labelSliderTitle->setPalette(QPalette::Dark)
 
-	labelSliderSpeed = new QLabel("1"); //Mettre vitesse en memoire dans le systeme eventuellement pour garder memoire
+	labelSliderSpeed = new QLabel("1"); //Mettre vitesse en memoire dans le systeme eventuellement pour garder memoire'
+	labelSliderSpeed->setFrameStyle(QFrame::StyledPanel);
+	labelSliderSpeed->setStyleSheet("background-color: yellow");
+	labelSliderTitle->setMaximumSize(50, 50);
 
 	sliderSpeed = new QSlider(Qt::Horizontal);
 	sliderSpeed->setTickPosition(QSlider::TicksBelow);
 	sliderSpeed->setTickInterval(1);
 	sliderSpeed->setRange(1, 10);
+	sliderSpeed->setStyleSheet("background-color: gray");
+	sliderSpeed->setFixedSize(400, 50);
+	//sliderSpeed->setMaximumSize(400, 50);
 
 	//sliderSpeed->setTracking(true);
 
@@ -41,22 +47,22 @@ OptionWindow::OptionWindow(QWidget *parent) : QMainWindow(parent)
 	layoutSlider->addWidget(labelSliderTitle, 0, 0, Qt::AlignHCenter);
 	layoutSlider->addWidget(labelSliderSpeed, 0, 1, Qt::AlignHCenter);
 	layoutSlider->addWidget(sliderSpeed, 1, 0, 1, 2, Qt::AlignHCenter);
-	layoutOption->addLayout(layoutSlider, 0, 0);
+	layoutOption->addItem(layoutSlider, 0, 0);
 
 	//PLACEMENT LAYOUT PRINCIPAL
 	layoutOption->addWidget(acceptButton, 1, 0);
 
 	optionWidget->setLayout(layoutOption);
+	//optionWidget->setStyleSheet("border: 2px solid blue");
 	setCentralWidget(optionWidget);
 }
 
 OptionWindow::~OptionWindow()
 {
 	delete acceptButton;
-
-	delete layoutOption;
-	delete layoutSlider;
 	delete sliderSpeed;
+	delete layoutSlider;
+	delete layoutOption;
 	delete optionWidget;
 }
 

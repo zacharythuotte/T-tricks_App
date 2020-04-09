@@ -3,6 +3,7 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
 	centralWidget = new QWidget();
+	pagesStack = new QStackedWidget();
 	
 	//MUSIQUE
 	musique = new QSoundEffect();
@@ -42,12 +43,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 	//IMAGE TITRE
 	screenTitle = new QLabel();
 	screenTitle->setPixmap(QPixmap("./Image/Screentitle.png"));
+	screenTitle->setAlignment(Qt::AlignCenter);
 
 	//BOUTON MENU PRINCIPAL
 	startButton = new QPushButton("Jouer!");
 	QObject::connect(startButton, SIGNAL(clicked()), this, SLOT(showGame()));
 
 	optionButton = new QPushButton("Options");
+	optionPage = new OptionWindow(this);
+	pagesStack->addWidget(optionPage);
 	QObject::connect(optionButton, SIGNAL(clicked()), this, SLOT(showOption()));
 
 	//Modifiee pour tests/////////////////////////////////////////
@@ -66,7 +70,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 	layoutPrincipal->addWidget(exitButton);
 	
 	centralWidget->setLayout(layoutPrincipal);
-	setCentralWidget(centralWidget);
+	pagesStack->addWidget(centralWidget);
+	//setCentralWidget(centralWidget);
+
+
+	setCentralWidget(pagesStack);
+	pagesStack->setCurrentWidget(centralWidget);
 }
 
 MainWindow::~MainWindow()
@@ -88,8 +97,8 @@ MainWindow::~MainWindow()
 //CETTE FONCTION MONTRE LA FENETRE D OPTIONS
 void MainWindow::showOption()
 {
-	optionPage = new OptionWindow();
-	setCentralWidget(optionPage);
+	pagesStack->setCurrentWidget(optionPage);
+	//setCentralWidget(optionPage);
 	//optionPage->show();
 }
 
@@ -106,6 +115,7 @@ void MainWindow::showGameOver()
 {
 	gameOverPage = new GameOverWindow(centralWidget);
 	setCentralWidget(gameOverPage);
+	QObject::connect(gameOverPage, SIGNAL(closed()), this, SLOT(showMainWindow()));
 	//gamePage->show();
 }
 
@@ -114,3 +124,8 @@ void MainWindow::changeVolume()
 	musique->setVolume((sliderVolume->value())/100.0);
 }
 
+void MainWindow::showMainWindow()
+{
+	pagesStack->setCurrentWidget(centralWidget);
+	//setCentralWidget(centralWidget);
+}

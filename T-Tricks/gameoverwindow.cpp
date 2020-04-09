@@ -3,7 +3,7 @@
 
 GameOverWindow::GameOverWindow(QWidget *parent) : QMainWindow(parent)
 {
-	parentWindow = parent;
+	mainWindow = parent;
 
 	gameOverWidget = new QWidget();
 
@@ -36,8 +36,9 @@ GameOverWindow::~GameOverWindow()
 
 void GameOverWindow::goToMainWindow()
 {
-	//qInfo() << "passe ici";
-	//setCentralWidget(parentWindow);
+	qInfo() << "passe ici";
+	//mainWindow.showMainWindow();
+	//setCentralWidget(mainWindow);
 	//this->close();
 }
 

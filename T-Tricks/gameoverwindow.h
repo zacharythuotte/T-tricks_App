@@ -18,7 +18,7 @@ public slots:
 	void goToMainWindow();
 
 private:
-	QWidget *parentWindow;
+	QWidget *mainWindow;
 	QWidget *gameOverWidget;
 	QGridLayout *layoutGameOver;
 	QGridLayout *layoutSlider;

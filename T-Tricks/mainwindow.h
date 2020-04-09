@@ -7,6 +7,7 @@
 #include <qlabel.h>
 #include <QSoundEffect.h>
 #include <qtoolbar.h>
+#include <qstackedwidget.h>
 
 #include "optionwindow.h"
 #include "gamewindow.h"
@@ -20,15 +21,18 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
 public slots:
 	void showOption();
 	void showGame();
 	void showGameOver();
+	void showMainWindow();
 
 	void changeVolume();
 
 private:
 	QWidget *centralWidget;
+	QStackedWidget *pagesStack; //Stack pour les pages du jeu (1 affichee a la fois)
 	QVBoxLayout *layoutPrincipal;
 	QSoundEffect *musique;
 	QPushButton *startButton;
