@@ -4,22 +4,26 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
 	centralWidget = new QWidget();
 	pagesStack = new QStackedWidget();
+	optionPage = new OptionWindow(this);
+	pagesStack->addWidget(optionPage);
+	leaderboardPage = new LeaderboardWindow(this);
+	pagesStack->addWidget(leaderboardPage);
 	
 	//MUSIQUE
 	musique = new QSoundEffect();
 	musique->setSource(QUrl::fromLocalFile("./Image/TetrisMetal.wav"));
 	musique->play();
 	musique->setLoopCount(QSoundEffect::Infinite);
-	musique->setVolume(0.5);
+	//musique->setVolume(0.5);
 
 	//LAYOUT
 	layoutPrincipal = new QVBoxLayout();
 
 	//BARRE OUTILS (VOLUME)
 	sliderVolume = new QSlider(Qt::Horizontal);
-	sliderVolume->setValue(50); //Mettre la valeur en memoire//////////////////////////////////////////
 	QObject::connect(sliderVolume, SIGNAL(valueChanged(int)), this, SLOT(changeVolume()));
-	//sliderVolume->setRange(0, 1);
+	sliderVolume->setValue(5); //Mettre la valeur en memoire//////////////////////////////////////////
+	sliderVolume->setRange(0, 100);
 
 	toolBar = new QToolBar("Volume");
 	this->setContextMenuPolicy(Qt::NoContextMenu); //Empeche denlever la toolbar
@@ -45,18 +49,15 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 	screenTitle->setPixmap(QPixmap("./Image/Screentitle.png"));
 	screenTitle->setAlignment(Qt::AlignCenter);
 
-	//BOUTON MENU PRINCIPAL
+	//BOUTONs MENU PRINCIPAL
 	startButton = new QPushButton("Jouer!");
 	QObject::connect(startButton, SIGNAL(clicked()), this, SLOT(showGame()));
 
 	optionButton = new QPushButton("Options");
-	optionPage = new OptionWindow(this);
-	pagesStack->addWidget(optionPage);
 	QObject::connect(optionButton, SIGNAL(clicked()), this, SLOT(showOption()));
 
-	//Modifiee pour tests/////////////////////////////////////////
-	volumeButton = new QPushButton("Test gameover");
-	QObject::connect(volumeButton, SIGNAL(clicked()), this, SLOT(showGameOver()));
+	leaderboardButton = new QPushButton("Voir meilleurs scores");
+	QObject::connect(leaderboardButton, SIGNAL(clicked()), this, SLOT(showLeaderboard()));
 	//QObject::connect(volumeButton, SIGNAL(clicked()), musique, SLOT(stop()));
 
 	exitButton = new QPushButton("Quitter");
@@ -66,7 +67,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 	layoutPrincipal->addWidget(screenTitle);
 	layoutPrincipal->addWidget(startButton);
 	layoutPrincipal->addWidget(optionButton);
-	layoutPrincipal->addWidget(volumeButton);
+	layoutPrincipal->addWidget(leaderboardButton);
 	layoutPrincipal->addWidget(exitButton);
 	
 	centralWidget->setLayout(layoutPrincipal);
@@ -82,7 +83,7 @@ MainWindow::~MainWindow()
 {
 	delete startButton;
 	delete optionButton;
-	delete volumeButton;
+	delete leaderboardButton;
 	delete sliderVolume;
 	delete toolBar;
 
@@ -110,7 +111,12 @@ void MainWindow::showGame()
 	//gamePage->show();
 }
 
-//CETTE FONCTION MONTRE LA FENETRE DE FIN DE JEU
+void MainWindow::showLeaderboard()
+{
+	pagesStack->setCurrentWidget(leaderboardPage);
+}
+
+//CETTE FONCTION MONTRE LA FENETRE DE FIN DE JEU POUR LES TESTS ///////////////////////////
 void MainWindow::showGameOver()
 {
 	gameOverPage = new GameOverWindow(centralWidget);

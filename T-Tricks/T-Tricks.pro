@@ -6,3 +6,4 @@ SOURCES     += mainwindow.cpp main.cpp gamewindow.cpp gameoverwindow.cpp optionw
 INCLUDEPATH += .
 LIBS	      += 
 QT += widgets multimedia
+RC_ICONS = icon.ico

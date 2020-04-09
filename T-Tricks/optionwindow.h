@@ -7,7 +7,6 @@
 #include <Qlabel.h>
 #include <QSound.h>
 #include <QSlider>
-//#include <Qdebug.h>
 
 class OptionWindow : public QMainWindow
 {

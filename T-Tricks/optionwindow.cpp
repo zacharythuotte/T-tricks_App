@@ -5,7 +5,7 @@ OptionWindow::OptionWindow(QWidget *parent) : QMainWindow(parent)
 	optionWidget = new QWidget();
 
 	//LAYOUT PRINCIPAL
-	layoutOption = new QGridLayout;
+	layoutOption = new QGridLayout();
 
 	//BACKGROUND DE LINTERFACE
 	QPixmap bkgnd("./Image/Background.jpg");
@@ -59,11 +59,13 @@ OptionWindow::OptionWindow(QWidget *parent) : QMainWindow(parent)
 
 OptionWindow::~OptionWindow()
 {
-	delete acceptButton;
+	//qInfo() << "Window doptions se fait deleter";
+
+	/*delete acceptButton;
 	delete sliderSpeed;
 	delete layoutSlider;
 	delete layoutOption;
-	delete optionWidget;
+	delete optionWidget;*/
 }
 
 void OptionWindow::changeSpeed()

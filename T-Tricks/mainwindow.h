@@ -2,16 +2,20 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <Qdebug.h>
 #include <qlayout.h>
 #include <qpushbutton.h>
 #include <qlabel.h>
 #include <QSoundEffect.h>
 #include <qtoolbar.h>
 #include <qstackedwidget.h>
+#include <qsizepolicy.h> //Voir pour resizer les menus eventuellement
+#include <qheaderview.h>
 
 #include "optionwindow.h"
 #include "gamewindow.h"
 #include "gameoverwindow.h"
+#include "leaderboardwindow.h"
 
 
 class MainWindow : public QMainWindow
@@ -27,6 +31,7 @@ public slots:
 	void showGame();
 	void showGameOver();
 	void showMainWindow();
+	void showLeaderboard();
 
 	void changeVolume();
 
@@ -37,7 +42,7 @@ private:
 	QSoundEffect *musique;
 	QPushButton *startButton;
 	QPushButton *optionButton;
-	QPushButton *volumeButton;
+	QPushButton *leaderboardButton;
 	QPushButton *exitButton;
 	QAction *startAct;
 	QAction *optionAct;
@@ -46,6 +51,7 @@ private:
 	OptionWindow *optionPage;
 	GameWindow *gamePage;
 	GameOverWindow *gameOverPage;
+	LeaderboardWindow *leaderboardPage;
 	QToolBar *toolBar;
 	QSlider *sliderVolume;
 };

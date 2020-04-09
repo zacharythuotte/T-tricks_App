@@ -101,4 +101,7 @@
       <Filter>Generated Files</Filter>
     </CustomBuild>
   </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\Users\Zach\Documents\GitHub\T-tricks_App\T-Tricks\T-Tricks_resource.rc" />
+  </ItemGroup>
 </Project>
