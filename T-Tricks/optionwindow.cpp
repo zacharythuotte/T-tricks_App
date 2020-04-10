@@ -5,17 +5,18 @@ OptionWindow::OptionWindow(QWidget *parent) : QMainWindow(parent)
 	optionWidget = new QWidget();
 
 	//LAYOUT PRINCIPAL
-	layoutOption = new QGridLayout();
+	layoutOption = new QVBoxLayout();
 
 	//BACKGROUND DE LINTERFACE
-	QPixmap bkgnd("./Image/Background.jpg");
-	bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
-	QPalette palette;
-	palette.setBrush(QPalette::Background, bkgnd);
-	this->setPalette(palette);
+	//QPixmap bkgnd("./Image/Background.jpg");
+	//bkgnd = bkgnd.scaled(this->size(), Qt::IgnoreAspectRatio);
+	//QPalette palette;
+	//palette.setBrush(QPalette::Background, bkgnd);
+	//this->setPalette(palette);
 
 	//BOUTON DE OPTION
 	acceptButton = new QPushButton("Accepter");
+	acceptButton->setFixedWidth(300);
 	QObject::connect(acceptButton, SIGNAL(clicked()), parent, SLOT(showMainWindow()));
 
 	//SLIDER CHOIX VITESSE
@@ -47,10 +48,19 @@ OptionWindow::OptionWindow(QWidget *parent) : QMainWindow(parent)
 	layoutSlider->addWidget(labelSliderTitle, 0, 0, Qt::AlignHCenter);
 	layoutSlider->addWidget(labelSliderSpeed, 0, 1, Qt::AlignHCenter);
 	layoutSlider->addWidget(sliderSpeed, 1, 0, 1, 2, Qt::AlignHCenter);
-	layoutOption->addItem(layoutSlider, 0, 0);
+	
+	sliderWidget = new QWidget();
+	sliderWidget->setLayout(layoutSlider);
+	//QPalette palette;
+	//palette.setColor(QPalette::Background, Qt::gray);
+	//sliderWidget->setPalette(palette);
+	//sliderWidget->setAutoFillBackground(true);
+
+	sliderWidget->setStyleSheet("border: 1px solid black; background-color: gray");
+	layoutOption->addWidget(sliderWidget);
 
 	//PLACEMENT LAYOUT PRINCIPAL
-	layoutOption->addWidget(acceptButton, 1, 0);
+	layoutOption->addWidget(acceptButton, 300, Qt::AlignHCenter);
 
 	optionWidget->setLayout(layoutOption);
 	//optionWidget->setStyleSheet("border: 2px solid blue");

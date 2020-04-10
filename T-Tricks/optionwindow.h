@@ -1,12 +1,13 @@
 #ifndef	OPTIONWINDOW_H
 #define OPTIONWINDOW_H
 
-#include <QMainWindow>
+#include <QMainWindow.h>
 #include <qlayout.h>
 #include <Qpushbutton.h>
 #include <Qlabel.h>
 #include <QSound.h>
-#include <QSlider>
+#include <QSlider.h>
+#include <qpalette.h>
 
 class OptionWindow : public QMainWindow
 {
@@ -20,7 +21,8 @@ public slots:
 
 private:
 	QWidget *optionWidget;
-	QGridLayout *layoutOption;
+	QWidget *sliderWidget; //Slider pour le groupe de widgets relies au slider
+	QVBoxLayout *layoutOption;
 	QGridLayout *layoutSlider;
 	QPushButton *acceptButton;
 	QSlider *sliderSpeed;

@@ -11,6 +11,7 @@
 #include <qstackedwidget.h>
 #include <qsizepolicy.h> //Voir pour resizer les menus eventuellement
 #include <qheaderview.h>
+#include <qwindow.h>
 
 #include "optionwindow.h"
 #include "gamewindow.h"

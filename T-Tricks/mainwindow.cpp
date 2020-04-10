@@ -26,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 	sliderVolume->setRange(0, 100);
 
 	toolBar = new QToolBar("Volume");
-	this->setContextMenuPolicy(Qt::NoContextMenu); //Empeche denlever la toolbar
+	this->setContextMenuPolicy(Qt::NoContextMenu); //Empeche utilisateur denlever la toolbar
 	//toolBar->addWidget()
 	toolBar->addWidget(new QLabel("Volume"));
 	toolBar->addSeparator();
@@ -49,31 +49,35 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 	screenTitle->setPixmap(QPixmap("./Image/Screentitle.png"));
 	screenTitle->setAlignment(Qt::AlignCenter);
 
-	//BOUTONs MENU PRINCIPAL
+	//BOUTONS MENU PRINCIPAL
 	startButton = new QPushButton("Jouer!");
+	startButton->setMaximumWidth(300);
 	QObject::connect(startButton, SIGNAL(clicked()), this, SLOT(showGame()));
 
 	optionButton = new QPushButton("Options");
+	optionButton->setMaximumWidth(300);
 	QObject::connect(optionButton, SIGNAL(clicked()), this, SLOT(showOption()));
 
 	leaderboardButton = new QPushButton("Voir meilleurs scores");
+	leaderboardButton->setMaximumWidth(300);
 	QObject::connect(leaderboardButton, SIGNAL(clicked()), this, SLOT(showLeaderboard()));
 	//QObject::connect(volumeButton, SIGNAL(clicked()), musique, SLOT(stop()));
 
 	exitButton = new QPushButton("Quitter");
+	exitButton->setMaximumWidth(300);
 	QObject::connect(exitButton, SIGNAL(clicked()), this, SLOT(close()));
 
 	//PLACEMENT LAYOUT PRINCIPAL
-	layoutPrincipal->addWidget(screenTitle);
-	layoutPrincipal->addWidget(startButton);
-	layoutPrincipal->addWidget(optionButton);
-	layoutPrincipal->addWidget(leaderboardButton);
-	layoutPrincipal->addWidget(exitButton);
+	layoutPrincipal->addWidget(screenTitle, 300, Qt::AlignCenter);
+	layoutPrincipal->addWidget(startButton, 300, Qt::AlignCenter);
+	layoutPrincipal->addWidget(optionButton, 300, Qt::AlignCenter);
+	layoutPrincipal->addWidget(leaderboardButton, 300, Qt::AlignCenter);
+	layoutPrincipal->addWidget(exitButton, 300, Qt::AlignCenter);
+	layoutPrincipal->setAlignment(Qt::AlignCenter);
 	
 	centralWidget->setLayout(layoutPrincipal);
+	centralWidget->setMaximumHeight(300);
 	pagesStack->addWidget(centralWidget);
-	//setCentralWidget(centralWidget);
-
 
 	setCentralWidget(pagesStack);
 	pagesStack->setCurrentWidget(centralWidget);
